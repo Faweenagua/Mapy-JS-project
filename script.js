@@ -8,6 +8,7 @@ let inputDuration = document.querySelector('.form__input--duration');
 let inputCadence = document.querySelector('.form__input--cadence');
 let inputElevation = document.querySelector('.form__input--elevation');
 
+// thjej tkjk
 class WorkOut {
   date = new Date();
   id = (Date.now() + '').slice(-10);
