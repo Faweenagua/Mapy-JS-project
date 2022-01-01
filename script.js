@@ -8,7 +8,6 @@ let inputDuration = document.querySelector('.form__input--duration');
 let inputCadence = document.querySelector('.form__input--cadence');
 let inputElevation = document.querySelector('.form__input--elevation');
 
-// thjej tkjk
 class WorkOut {
   date = new Date();
   id = (Date.now() + '').slice(-10);
@@ -101,6 +100,10 @@ class App {
     }).addTo(this.#map);
 
     this.#map.on('click', this._showForm.bind(this));
+
+    this.#workouts.forEach(work => {
+      this._renderWorkoutMarker(work);
+    });
   }
 
   _newWorkout(e) {
@@ -291,7 +294,9 @@ class App {
 
     this.#workouts = data;
 
-    this.#workouts.forEach(work => this._renderWorkout(work));
+    this.#workouts.forEach(work => {
+      this._renderWorkout(work);
+    });
   }
 }
 
