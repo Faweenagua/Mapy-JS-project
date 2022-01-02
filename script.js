@@ -266,6 +266,7 @@ class App {
     inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
   }
 
+  // move to a marker location
   _moveToPopUp(e) {
     const workoutEl = e.target.closest('.workout');
 
@@ -283,10 +284,12 @@ class App {
     });
   }
 
+  // store data in local storage
   _setLocalStorage() {
     localStorage.setItem('workouts', JSON.stringify(this.#workouts));
   }
 
+  // obtain data from local storage
   _getLocalStorage() {
     const data = JSON.parse(localStorage.getItem('workouts'));
 
@@ -299,6 +302,7 @@ class App {
     });
   }
 
+  // resets the app
   reset() {
     localStorage.removeItem('workouts');
     location.reload();
